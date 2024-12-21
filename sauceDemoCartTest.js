@@ -39,7 +39,7 @@ async function sauceDemoCartTest() {
         let cartBadge = await driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
         assert.strictEqual(await cartBadge.isDisplayed(), true, "Cart badge is not visible");
         
-        //Memastikan button Cart bertambah jumlahnya menjadi 1
+        //Memastikan badge Cart bertambah jumlahnya menjadi 1
         let badgeCount = await cartBadge.getText();
         assert.strictEqual(badgeCount, '1', "Cart badge count is not 1");
 
