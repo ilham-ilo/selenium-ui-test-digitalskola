@@ -9,8 +9,8 @@ class LoginPage {
         this.errorMessage = By.xpath("//div[@class='error-message-container error']");
     }
 
-    async navigate(){
-        await this.driver.get("https://www.saucedemo.com/")
+    async navigate(browser){
+        await this.driver.get(browser)
     }
 
     async login(username, password){

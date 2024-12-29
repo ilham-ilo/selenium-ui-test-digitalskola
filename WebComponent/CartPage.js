@@ -4,6 +4,7 @@ class CartPage{
     constructor(driver){
         this.driver = driver;
         this.item = By.xpath("//div[@class='cart_item']");
+        this.checkoutButton = By.xpath("//button[@id='checkout']");
     }
 
     async titleIsOnCart(){
@@ -14,6 +15,10 @@ class CartPage{
     async itemIsOnCart(){
         const cartItems = await this.driver.findElements(this.item);
         return cartItems.length > 0;
+    }
+
+    async clickCheckoutOnCart(){
+        await this.driver.findElement(this.checkoutButton).click();
     }
 }
 
